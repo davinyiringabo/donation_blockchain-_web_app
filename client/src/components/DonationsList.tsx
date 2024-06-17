@@ -56,7 +56,7 @@ const DonationsList: React.FC<{
 
                     </div> :
 
-                    <div className={`font-bold ${darkMode ? 'text-white' : 'text-[#121212]'}`}>
+                    <div className={`font-bold mt-10 ${darkMode ? 'text-white' : 'text-[#121212]'}`}>
                         No donation exists start one!
                     </div>
             }

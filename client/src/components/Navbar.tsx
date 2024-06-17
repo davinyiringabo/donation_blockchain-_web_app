@@ -53,16 +53,12 @@ const Navbar: React.FC<{
             <div
                 className={`
                     relative h-full flex md:items-center
-                    w-[100%] md:w-[80%]  md:flex-row flex-col`}
+                    w-[100%] md:w-[90%]  md:flex-row flex-col`}
                 ref={navRef}
             >
                 <div className='flex items-center'>
                     <div className='w-16 h-16 flex justify-center items-center cursor-pointer'>
-                        <img
-                            src={logo}
-                            alt="logo"
-                            className='object-cover'
-                        />
+                        <h1 className={`logo_name font-extrabold ${!darkMode ? "text-black" : "text-white"}`}>Donationia</h1>
                     </div>
 
                     <div
@@ -119,41 +115,6 @@ const Navbar: React.FC<{
                             Home
                         </span>
                     </div>
-
-                    <div
-                        className={`
-                        flex items-center relative md:mb-0 mb-[10px] md:w-max w-[150px] 
-                        cursor-pointer mr-2 p-[5px] rounded-[8px] border
-                        ${darkMode ? 'bg-white' : ''}
-                        hover:bg-gray-200
-                        `}
-                        onClick={() => handleNavigate('/notifications')}
-                    >
-                        <NotificationsIcon
-                            className='mr-2 md:mr-0'
-                        />
-
-                        <span className='md:hidden '>
-                            Notifications
-                        </span>
-
-                        {notifications.filter(e => e.seen === false).length > 0 ?
-                            <span className='flex z-50'>
-                                <span
-                                    className='
-                                animate-ping absolute top-[-2px] right-[-2px] inline-flex 
-                                h-[10px] w-[10px] rounded-full bg-red-400 opacity-75'>
-
-                                </span>
-                                <span
-                                    className='
-                                absolute top-[-2px] right-[-2px] inline-flex 
-                                h-[10px] w-[10px] rounded-full bg-red-500'>
-
-                                </span>
-                            </span> : null}
-                    </div>
-
 
                     <div
                         className={`
