@@ -9324,9 +9324,7 @@
   "ast": {
     "absolutePath": "project:/contracts/Donations.sol",
     "exportedSymbols": {
-      "Donations": [
-        251
-      ]
+      "Donations": [251]
     },
     "id": 252,
     "license": "MIT",
@@ -9334,12 +9332,7 @@
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.8", ".0"],
         "nodeType": "PragmaDirective",
         "src": "34:23:0"
       },
@@ -9351,9 +9344,7 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 251,
-        "linearizedBaseContracts": [
-          251
-        ],
+        "linearizedBaseContracts": [251],
         "name": "Donations",
         "nameLocation": "70:9:0",
         "nodeType": "ContractDefinition",
@@ -9720,9 +9711,7 @@
                 "pathNode": {
                   "id": 27,
                   "name": "Donation",
-                  "nameLocations": [
-                    "443:8:0"
-                  ],
+                  "nameLocations": ["443:8:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 22,
                   "src": "443:8:0"
@@ -9868,9 +9857,7 @@
               "src": "900:535:0",
               "statements": [
                 {
-                  "assignments": [
-                    61
-                  ],
+                  "assignments": [61],
                   "declarations": [
                     {
                       "constant": false,
@@ -9893,9 +9880,7 @@
                         "pathNode": {
                           "id": 59,
                           "name": "Donation",
-                          "nameLocations": [
-                            "911:8:0"
-                          ],
+                          "nameLocations": ["911:8:0"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 22,
                           "src": "911:8:0"
@@ -10076,10 +10061,7 @@
                       "id": 66,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "980:7:0",
                       "typeDescriptions": {
@@ -10860,9 +10842,7 @@
               "src": "1497:388:0",
               "statements": [
                 {
-                  "assignments": [
-                    133
-                  ],
+                  "assignments": [133],
                   "declarations": [
                     {
                       "constant": false,
@@ -10885,9 +10865,7 @@
                         "pathNode": {
                           "id": 131,
                           "name": "Donation",
-                          "nameLocations": [
-                            "1508:8:0"
-                          ],
+                          "nameLocations": ["1508:8:0"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 22,
                           "src": "1508:8:0"
@@ -10944,9 +10922,7 @@
                   "src": "1508:42:0"
                 },
                 {
-                  "assignments": [
-                    139
-                  ],
+                  "assignments": [139],
                   "declarations": [
                     {
                       "constant": false,
@@ -11193,10 +11169,7 @@
                   "src": "1649:35:0"
                 },
                 {
-                  "assignments": [
-                    161,
-                    null
-                  ],
+                  "assignments": [161, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -11354,9 +11327,7 @@
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "names": [
-                        "value"
-                      ],
+                      "names": ["value"],
                       "nodeType": "FunctionCallOptions",
                       "options": [
                         {
@@ -11853,9 +11824,7 @@
               "src": "2168:303:0",
               "statements": [
                 {
-                  "assignments": [
-                    219
-                  ],
+                  "assignments": [219],
                   "declarations": [
                     {
                       "constant": false,
@@ -11879,9 +11848,7 @@
                           "pathNode": {
                             "id": 216,
                             "name": "Donation",
-                            "nameLocations": [
-                              "2228:8:0"
-                            ],
+                            "nameLocations": ["2228:8:0"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 22,
                             "src": "2228:8:0"
@@ -11945,9 +11912,7 @@
                           "pathNode": {
                             "id": 220,
                             "name": "Donation",
-                            "nameLocations": [
-                              "2265:8:0"
-                            ],
+                            "nameLocations": ["2265:8:0"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 22,
                             "src": "2265:8:0"
@@ -12132,9 +12097,7 @@
                   },
                   "id": 246,
                   "initializationExpression": {
-                    "assignments": [
-                      228
-                    ],
+                    "assignments": [228],
                     "declarations": [
                       {
                         "constant": false,
@@ -12279,9 +12242,7 @@
                       "pathNode": {
                         "id": 210,
                         "name": "Donation",
-                        "nameLocations": [
-                          "2149:8:0"
-                        ],
+                        "nameLocations": ["2149:8:0"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 22,
                         "src": "2149:8:0"

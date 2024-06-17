@@ -1,19 +1,19 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Donation, DonationInitialState } from './Donation';
-import { ethers } from 'ethers';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { Donation, DonationInitialState } from "./Donation";
+import { ethers } from "ethers";
 
 declare var window: any;
 
 const connectSmartContract = async () => {
   if (!window.ethereum) {
-    throw new Error('MetaMask is not installed');
+    throw new Error("MetaMask is not installed");
   }
   const provider = new ethers.providers.Web3Provider(window.ethereum);
 
   const DonationType = `(address owner, string title, string story, uint256 goal, uint256 deadline, uint256 collectedAmount, string image, address[] donators , uint256[] donations)`;
 
   const ABI = [
-    'function getNumberOfDonations() public view returns (uint256)',
+    "function getNumberOfDonations() public view returns (uint256)",
     `function createDonation(
         address _owner,
         string _title,
@@ -22,52 +22,67 @@ const connectSmartContract = async () => {
         uint256 _deadline,
         string _image
     ) public returns (uint256)`,
-    'function donateToDonation(uint256 _id) public payable',
-    'function getDonators(uint256 _id) returns (address[], uint256[])',
-    `function getAllDonations() public view returns (${DonationType} [])`
+    "function donateToDonation(uint256 _id) public payable",
+    "function getDonators(uint256 _id) returns (address[], uint256[])",
+    `function getAllDonations() public view returns (${DonationType} [])`,
   ];
 
   const contract = new ethers.Contract(
-    '0x2232aC1F3Bf11C1fAeeA4cD917291B4fBbCAB3b6',
+    "0x2232aC1F3Bf11C1fAeeA4cD917291B4fBbCAB3b6",
     ABI,
-    provider.getSigner()
+    provider.getSigner(),
   );
 
   return contract;
 };
 
-export const getDonations = createAsyncThunk('donation/getAll', async () => {
+export const getDonations = createAsyncThunk("donation/getAll", async () => {
   const contract = await connectSmartContract();
   const data = await contract.getAllDonations();
   return data;
 });
 
-export const saveDonation = createAsyncThunk('donation/save', async (data: Donation) => {
-  const { owner, title, story, goal, deadline, image } = data;
-  const contract = await connectSmartContract();
-  const weiValue = ethers.utils.parseEther(goal.toString());
-  const transaction = await contract.createDonation(owner, title, story, weiValue, deadline, image);
-  await transaction.wait();
-  return data;
-});
+export const saveDonation = createAsyncThunk(
+  "donation/save",
+  async (data: Donation) => {
+    const { owner, title, story, goal, deadline, image } = data;
+    const contract = await connectSmartContract();
+    const weiValue = ethers.utils.parseEther(goal.toString());
+    const transaction = await contract.createDonation(
+      owner,
+      title,
+      story,
+      weiValue,
+      deadline,
+      image,
+    );
+    await transaction.wait();
+    return data;
+  },
+);
 
-export const donate = createAsyncThunk('donation/donate', async (data: { id: number, amount: string }) => {
-  const { id, amount } = data;
-  const contract = await connectSmartContract();
-  const transaction = await contract.donateToDonation(id, { value: ethers.utils.parseEther(amount) });
-  await transaction.wait();
-  return data;
-});
+export const donate = createAsyncThunk(
+  "donation/donate",
+  async (data: { id: number; amount: string }) => {
+    const { id, amount } = data;
+    const contract = await connectSmartContract();
+    const transaction = await contract.donateToDonation(id, {
+      value: ethers.utils.parseEther(amount),
+    });
+    await transaction.wait();
+    return data;
+  },
+);
 
 const initialState: DonationInitialState = {
   loading: false,
   donations: [],
   error: null,
-  success: false
+  success: false,
 };
 
 const donationSlice = createSlice({
-  name: 'Donation',
+  name: "Donation",
   initialState,
   reducers: {
     resetState(state) {
@@ -75,7 +90,7 @@ const donationSlice = createSlice({
       state.donations = [];
       state.error = null;
       state.success = false;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -117,7 +132,7 @@ const donationSlice = createSlice({
         state.error = action.error.message;
         state.success = false;
       });
-  }
+  },
 });
 
 export const { resetState } = donationSlice.actions;
