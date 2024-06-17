@@ -12,6 +12,7 @@ const DonationsList: React.FC<{
     document.title = 'E-Donation | Home'
 
     const { loading, donations } = useAppSelector(state => state.donation)
+    console.log("donations in donation list --> ", donations);
     const dispatch = useAppDispatch()
 
     useEffect(() => {

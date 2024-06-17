@@ -17,7 +17,7 @@ const Card: React.FC<{
 
     return (
         <div
-            className={`flex min-h-[250px] bg-[${darkMode ? '#1c1c24' : '#FFF'}] rounded-[16px] shadow-xl cursor-pointer`}
+            className={`flex min-h-[250px] bg-[${darkMode ? '#1c1c24' : '#FFF'}] rounded-[5px] shadow-xl cursor-pointer p-2`}
             onClick={hanldeNavigate}
         >
             <div className='w-full'>

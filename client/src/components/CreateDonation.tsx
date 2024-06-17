@@ -64,12 +64,12 @@ const CreateDonation: React.FC<{ darkMode: boolean }> = ({ darkMode }) => {
     }
 
 
-    useEffect(() => {
-        if (success) {
-            console.log('Success !')
-            navigate('/', { replace: true })
-        }
-    }, [success, navigate])
+    // useEffect(() => {
+    //     if (success) {
+    //         console.log('Success !')
+    //         navigate('/', { replace: true })
+    //     }
+    // }, [success, navigate])
 
     return (
         <div className='mt-[70px] flex justify-center items-center'>

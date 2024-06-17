@@ -16,6 +16,8 @@ declare var window: any
 
 function App() {
   const { connected } = useAppSelector(store => store.wallet)
+  const {donations} = useAppSelector(store => store.donation)
+  console.log(donations);
   const [darkMode, setDarkMode] = useState<boolean>(true)
   const [changed, setChanged] = useState<boolean>(true)
   const { address } = useAppSelector(store => store.wallet)
